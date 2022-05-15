@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-export const StyledHeader = styled.div`
+export const StyledFooter = styled.div`
 	position: fixed;
+	bottom: 0px;
 	width: 100vw;
 	height: 5vh;
 	z-index: 0;

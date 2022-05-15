@@ -1,20 +1,13 @@
 import React from "react";
-import { useCountDownContext } from "../../contexts/ManageCountDownContext";
-import { FlexDiv } from "../styles/FlexDiv";
+
 import { StyledHeader } from "../styles/Header.styled";
-import { TitleMedium } from "../styles/Title";
+import Timer from "../Timer/Timer";
 
 export default function Header() {
-	const {
-		timer: { hour, min, sec },
-	} = useCountDownContext();
 	return (
 		<>
 			<StyledHeader>
-				<FlexDiv height={"100%"}>
-					<TitleMedium>{hour} :</TitleMedium> <TitleMedium>{min} :</TitleMedium>
-					<TitleMedium>{sec}</TitleMedium>
-				</FlexDiv>
+				<Timer size={"small"} />
 			</StyledHeader>
 		</>
 	);
