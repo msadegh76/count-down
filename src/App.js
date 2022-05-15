@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { ThemeProvider } from "styled-components";
+import "./App.css";
+import Header from "./components/Header/Header";
+import Body from "./components/Body/Body";
+import { ManageCountDownContext } from "./contexts/ManageCountDownContext";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const theme = {
+		light_red: "#dc3545",
+		dark_blue: "#1e1e2d",
+		deep_blue: "#188124",
+	};
+	return (
+		<>
+			<ManageCountDownContext>
+				<ThemeProvider theme={theme}>
+					<Header />
+					<Body />
+					{/* <Footer /> */}
+				</ThemeProvider>
+			</ManageCountDownContext>
+		</>
+	);
 }
 
 export default App;
